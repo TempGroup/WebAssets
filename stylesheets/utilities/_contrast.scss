@@ -1,0 +1,15 @@
+@function getColorBrightness($color) {
+  @return (red($color) + green($color) + blue($color)) / (255 * 3);
+}
+
+@function isColorDark($color) {
+  @return getColorBrightness($color) <= 0.5;
+}
+
+@function adjust($color, $percent, $baseColorIsDark: false) {
+  @if ($baseColorIsDark) {
+    @return lighten($color, $percent);
+  }
+
+  @return darken($color, $percent);
+}

@@ -6,3 +6,10 @@
 @use 'normalize.css/normalize.css';
 @use 'base/background';
 @use 'base/typography';
+@use 'base/logo';
+@use 'base/user_avatar';
+
+/**
+  * Dashboard header setup
+  */
+@use 'header/geometry';

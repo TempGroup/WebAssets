@@ -1,5 +1,6 @@
 @use 'config';
 
 body {
-  background: config.$backgroundColor;
+  background: config.$bodyBackgroundColor;
+  color: config.$bodyFontColor;
 }

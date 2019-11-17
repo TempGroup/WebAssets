@@ -1,0 +1,11 @@
+@use 'config';
+
+.user-avatar {
+  display: block;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid config.$userAvatarBorderColor;
+  /* TODO: .user-avatar is a placeholder white box */
+  background: #fff;
+}

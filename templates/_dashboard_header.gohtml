@@ -1,9 +1,27 @@
 <header id="app-header">
-  <div class="app-logo"></div>
+  <div class="left side">
+    <div class="app-logo"></div>
 
-  <ul id="meta-nav">
-    <li>Apps</li>
-    <li>Users</li>
-    <li>System</li>
-  </ul>
+    <nav id="meta-nav">
+      <a class="nav-item current">Apps</a>
+      <a class="nav-item">Users</a>
+      <a class="nav-item">System</a>
+    </nav>
+  </div>
+
+  <div class="right side">
+    <div class="user action-panel">
+      <img class="user-avatar" />
+
+      <div class="dropdown-container">
+        <div class="panel contents">
+          <p class="user name">@octocat</p>
+
+          <ul class="panel action-list">
+            <li>Log out</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
 </header>

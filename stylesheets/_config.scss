@@ -1,3 +1,5 @@
+@use 'utilities/contrast';
+
 /**
  * Color setup
  */
@@ -6,4 +8,23 @@ $primaryColor: rgb(50, 88, 168);
 $secondaryColor: darken($primaryColor, 50%);
 
 /* Extensive role model */
-$backgroundColor: darken($primaryColor, 35%);
+$isDarkModeEnabled: contrast.isColorDark($primaryColor);
+// Body
+$bodyBackgroundColor: darken($primaryColor, 35%);
+$bodyFontColor: contrast.adjust($bodyBackgroundColor, 80%, $isDarkModeEnabled);
+// Icons
+$userAvatarBorderColor: contrast.adjust($bodyBackgroundColor, 40%, $isDarkModeEnabled);
+// Header & Meta Navigation
+$metaNavItemFontColor: darken($bodyFontColor, 8%);
+$metaNavItemFontColorCurrent: $bodyFontColor;
+// Action Panels
+$actionPanelBorderColor: contrast.adjust($bodyBackgroundColor, 40%, $isDarkModeEnabled);
+$actionPanelBackgroundColor: lighten($bodyBackgroundColor, 80%);
+$actionPanelFontColor: darken($actionPanelBackgroundColor, 70%);
+
+/**
+  * Header spacing setup
+  */
+$headerOuterMargin: 1.8em;
+$metaNavItemSpacing: 0.4em;
+$metaNavSpacing: $headerOuterMargin - $metaNavItemSpacing;

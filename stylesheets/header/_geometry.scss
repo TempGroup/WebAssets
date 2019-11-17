@@ -1,0 +1,100 @@
+@use 'config';
+
+header#app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: config.$headerOuterMargin;
+
+  /* Left side of the header */
+  .left.side {
+    display: flex;
+    align-items: center;
+
+    /* Meta navigation */
+    #meta-nav {
+      display: flex;
+      flex-direction: row;
+      margin-left: config.$metaNavSpacing;
+      list-style: none;
+
+      a.nav-item {
+        display: block;
+        margin: 0 config.$metaNavItemSpacing;
+        color: config.$metaNavItemFontColor;
+        font-size: 1.2em;
+        font-weight: 600;
+        text-transform: uppercase;
+
+        &.current {
+          color: config.$metaNavItemFontColorCurrent;
+          font-weight: 900;
+        }
+      }
+    }
+  }
+
+  /* Right side of the header */
+  .right.side {
+    /* Generic quick action panels */
+    .action-panel {
+      position: relative;
+
+      .dropdown-container {
+        position: absolute;
+        top: calc(100%);
+        right: -8px;
+        display: none;
+        padding-top: 8px;
+
+        .panel.contents {
+          max-width: 200px;
+          width: 200px;
+          border-radius: 6px;
+          background: config.$actionPanelBackgroundColor;
+          color: config.$actionPanelFontColor;
+
+          /* Child spacing */
+          & > p,
+          & > .panel.action-list > li,
+          & > .panel.action-list > a {
+            margin: 0;
+            padding: 0.7em 1em;
+          }
+
+          /* Action list */
+          & > .panel.action-list {
+            list-style: none;
+
+            & > li {
+            }
+          }
+
+          /* Caret */
+          &::before {
+            position: absolute;
+            top: 2px;
+            right: 12px;
+            display: block;
+            width: 0;
+            height: 0;
+            content: '';
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-bottom: 6px solid config.$actionPanelBackgroundColor;
+          }
+        }
+      }
+
+      &:hover, &:active {
+        .dropdown-container {
+          display: block;
+        }
+      }
+
+      /* User quick action panel */
+      &.user {
+      }
+    }
+  }
+}
