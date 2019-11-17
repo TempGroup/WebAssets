@@ -1,2 +1,2 @@
-# Ignore built development CSS files
-*.css
+# Ignore built files
+cooked
