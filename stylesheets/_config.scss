@@ -1,0 +1,9 @@
+/**
+ * Color setup
+ */
+/* Basic model */
+$primaryColor: rgb(50, 88, 168);
+$secondaryColor: darken($primaryColor, 50%);
+
+/* Extensive role model */
+$backgroundColor: darken($primaryColor, 35%);

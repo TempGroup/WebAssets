@@ -1,6 +1,8 @@
-body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2em;
-}
+@use 'config';
+
+/**
+  * Document body setup
+  */
+@use 'normalize.css/normalize.css';
+@use 'base/background';
+@use 'base/typography';
