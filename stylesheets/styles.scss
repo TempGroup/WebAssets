@@ -15,6 +15,13 @@
 @use 'base/user_avatar' with (
   $border-color: contrast.adjust(background.$background-color, 40%)
 );
+@use 'base/system-notifications' with (
+  $base-color: lighten(desaturate(background.$background-color, 50%), 55%),
+  $base-blend-in: 0.2,
+  $level-mix-percent: 20%,
+  $level-color-info: rgb(59, 150, 217),
+  $level-color-warning: rgb(211, 217, 35)
+);
 
 /**
   * Erdwolf-specific setup
