@@ -1,6 +1,7 @@
-@use 'config';
+$background-color: #fff !default;
+$font-color: #000 !default;
 
 body {
-  background: config.$bodyBackgroundColor;
-  color: config.$bodyFontColor;
+  background: $background-color;
+  color: $font-color;
 }

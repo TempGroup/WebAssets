@@ -1,15 +1,43 @@
-@use 'config';
+@use 'erdwolf/colors';
+@use 'utilities/contrast';
 
 /**
   * Document body setup
   */
 @use 'normalize.css/normalize.css';
-@use 'base/background';
-@use 'base/typography';
-@use 'base/logo';
-@use 'base/user_avatar';
+@use 'base/background' with (
+  $background-color: darken(colors.$primaryColor, 35%),
+  $font-color: contrast.adjust(darken(colors.$primaryColor, 35%), 80%)
+);
+@use 'base/typography' with (
+  $fonts: 'system'
+);
+@use 'base/user_avatar' with (
+  $border-color: contrast.adjust(background.$background-color, 40%)
+);
+
+/**
+  * Erdwolf-specific setup
+  */
+@use 'erdwolf/logo' with (
+  $size: 36px
+);
 
 /**
   * Dashboard header setup
   */
-@use 'header/geometry';
+@use 'header/geometry' as _header_geometry with (
+  $outer-margin: 1.8em,
+  $action-panel-background-color: lighten(background.$background-color, 80%)
+);
+@use 'header/nav-geometry' with (
+  $item-spacing: 0.4em,
+  $outer-margin: _header_geometry.$outer-margin - 0.4em,
+  $item-font-color: darken(background.$font-color, 8%),
+  $current-item-font-color: background.$font-color
+);
+
+/**
+  * Dashboard actions setup
+  */
+//@use 'actions-list/list-geometry';

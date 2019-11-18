@@ -1,13 +1,18 @@
-@function getColorBrightness($color) {
-  @return (red($color) + green($color) + blue($color)) / (255 * 3);
+@use 'erdwolf/colors';
+@use 'utilities/brightness';
+
+@function adjust($color, $percent) {
+  @if (colors.$useDarkPalette) {
+    @return lighten($color, $percent);
+  }
+
+  @return darken($color, $percent);
 }
 
-@function isColorDark($color) {
-  @return getColorBrightness($color) <= 0.5;
-}
+@function adjustStandalone($color, $percent) {
+  $isDark: brightness.isColorDark($color);
 
-@function adjust($color, $percent, $baseColorIsDark: false) {
-  @if ($baseColorIsDark) {
+  @if ($isDark) {
     @return lighten($color, $percent);
   }
 
