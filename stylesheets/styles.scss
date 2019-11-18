@@ -40,4 +40,7 @@
 /**
   * Dashboard actions setup
   */
-//@use 'actions-list/list-geometry';
+@use 'actions-list/geometry' as _action_list_geometry with (
+  $shelf-color: lighten(desaturate(background.$background-color, 50%), 55%),
+  $shelf-opacity: 0.2
+);
