@@ -1,0 +1,33 @@
+$background-color: #ccc !default;
+$font-color: #222 !default;
+$spacing-inside: 2rem;
+$margin-inside: 1.8em;
+
+.modal-container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .modal {
+    position: relative;
+    margin: 1em;
+    padding: $margin-inside 0;
+    max-width: 500px;
+    width: 100%;
+    border-radius: 12px;
+    background: $background-color;
+    color: $font-color;
+    overflow-y: auto;
+
+    header, header#app-header {
+      padding-top: 0;
+    }
+
+    main {
+      h1, p {
+        margin: 3px $spacing-inside;
+      }
+    }
+  }
+}

@@ -5,7 +5,7 @@ $current-item-font-color: #222 !default;
 
 header#app-header {
   .left.side {
-    .app-name {
+    .app-name.next-to-nav {
       border-right: 1px solid $item-font-color;
       padding-right: $outer-margin;
     }

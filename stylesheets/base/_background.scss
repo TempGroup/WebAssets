@@ -1,6 +1,10 @@
 $background-color: #fff !default;
 $font-color: #000 !default;
 
+html, body {
+  min-height: 100%;
+}
+
 body {
   background: $background-color;
   color: $font-color;

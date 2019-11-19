@@ -31,6 +31,14 @@
 );
 
 /**
+  * Modals (e.g. sign-in page) setup
+  */
+@use 'modals/geometry' as _modal_geometry with (
+  $background-color: lighten(background.$background-color, 10%),
+  $font-color: background.$font-color
+);
+
+/**
   * Dashboard header setup
   */
 @use 'header/geometry' as _header_geometry with (
