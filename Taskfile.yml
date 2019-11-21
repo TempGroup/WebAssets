@@ -1,0 +1,9 @@
+version: '2'
+
+tasks:
+  cook:
+    cmds:
+      - mkdir -p cooked
+      - cp -av images/* cooked/
+      - sass --style=expanded
+        --load-path stylesheets stylesheets/styles.scss cooked/styles.css
