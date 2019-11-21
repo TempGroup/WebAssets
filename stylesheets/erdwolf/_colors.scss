@@ -5,4 +5,5 @@
  */
 $primaryColor: rgb(50, 88, 168);
 $secondaryColor: darken($primaryColor, 50%);
-$useDarkPalette: brightness.isColorDark($primaryColor);
+$backgroundColor: mix(#000000, $primaryColor, 80%);
+$useDarkPalette: brightness.isColorDark($backgroundColor);

@@ -6,8 +6,8 @@
   */
 @use 'normalize.css/normalize.css';
 @use 'base/background' with (
-  $background-color: darken(colors.$primaryColor, 35%),
-  $font-color: contrast.adjust(darken(colors.$primaryColor, 35%), 80%)
+  $background-color: colors.$backgroundColor,
+  $font-color: contrast.adjust(colors.$backgroundColor, 80%)
 );
 @use 'base/typography' with (
   $fonts: 'system'
