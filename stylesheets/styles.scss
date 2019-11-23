@@ -5,6 +5,7 @@
   * Document body setup
   */
 @use 'normalize.css/normalize.css';
+@use 'base/flex';
 @use 'base/background' with (
   $background-color: colors.$backgroundColor,
   $font-color: contrast.adjust(colors.$backgroundColor, 80%)
@@ -14,6 +15,9 @@
 );
 @use 'base/user_avatar' with (
   $border-color: contrast.adjust(background.$background-color, 40%)
+);
+@use 'base/buttons' with (
+  $background-color: lighten(background.$background-color, 20%)
 );
 @use 'base/system-notifications' with (
   $base-color: lighten(desaturate(background.$background-color, 50%), 55%),
