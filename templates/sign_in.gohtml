@@ -6,7 +6,7 @@
   </head>
 
   <body class="modal-container">
-    <div class="full-size modal">
+    <div class="modal half-width">
       <header id="app-header">
         <div class="left side">
           <div class="app-logo">
@@ -20,6 +20,16 @@
       <main>
         <h1 class="modal-title">Sign in</h1>
         <p>You are required to sign in before accessing this area.</p>
+
+        <section>
+          <label class="section-title">Sign in with</label>
+
+          <div class="flex justify-content-between wrap">
+            {{ range $name, $info := .configuredAuthProviders }}
+              <a class="button" href="/auth/sign-in/with/{{ $name }}">{{ $info.Name }}</a>
+            {{ end }}
+          </div>
+        </section>
       </main>
     </div>
   </body>
