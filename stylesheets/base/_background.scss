@@ -5,6 +5,14 @@ html, body {
   min-height: 100%;
 }
 
+.full-height {
+  min-height: 100%;
+
+  &.force {
+    height: 100%;
+  }
+}
+
 body {
   background: $background-color;
   color: $font-color;

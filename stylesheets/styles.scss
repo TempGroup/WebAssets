@@ -17,12 +17,12 @@
   $border-color: contrast.adjust(background.$background-color, 40%)
 );
 @use 'base/buttons' with (
-  $background-color: lighten(background.$background-color, 20%)
+  $background-color: desaturate(lighten(background.$background-color, 25%), 10%)
 );
 @use 'base/system-notifications' with (
   $base-color: lighten(desaturate(background.$background-color, 50%), 55%),
-  $base-blend-in: 0.2,
-  $level-mix-percent: 20%,
+  $base-blend-in: 0.6,
+  $level-mix-percent: 30%,
   $level-color-info: rgb(59, 150, 217),
   $level-color-warning: rgb(211, 217, 35)
 );
@@ -38,7 +38,7 @@
   * Modals (e.g. sign-in page) setup
   */
 @use 'modals/geometry' as _modal_geometry with (
-  $background-color: lighten(background.$background-color, 10%),
+  $background-color: desaturate(contrast.adjust(background.$background-color, 12%), 45%),
   $font-color: background.$font-color
 );
 

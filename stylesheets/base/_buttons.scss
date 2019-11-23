@@ -18,7 +18,7 @@ $font-color: contrast.adjustStandalone($background-color, 50%) !default;
   }
 
   &:hover, &:active {
-    background: lighten($background-color, 3%);
+    background: lighten($background-color, 1%);
     border-color: lighten($border-color, 10%);
   }
 }

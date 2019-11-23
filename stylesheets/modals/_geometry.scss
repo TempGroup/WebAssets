@@ -1,25 +1,22 @@
 @use 'utilities/contrast';
 $background-color: #ccc !default;
-$border-color: desaturate(lighten($background-color, 12%), 5%) !default;
 $font-color: #222 !default;
 $spacing-inside: 2rem !default;
 $margin-inside: 1.8em !default;
 $field-color: contrast.adjustStandalone(desaturate($background-color, 30%), 20%) !default;
 
 .modal-container {
+  // TODO: Rename modal-container to full-height and remove modal's dependency
   height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 
   .modal {
     position: relative;
-    margin: 1em;
+    margin: 1rem 0;
     padding: $margin-inside 0;
     max-width: 500px;
     width: 100%;
-    border-radius: 12px;
-    border: 1px solid $border-color;
+    border-radius: 8px;
+    border: 1px solid $field-color;
     background: $background-color;
     color: $font-color;
     overflow-y: auto;
@@ -28,24 +25,24 @@ $field-color: contrast.adjustStandalone(desaturate($background-color, 30%), 20%)
       max-width: 375px;
     }
 
+    &.micro {
+      padding: 0.6rem 0.9rem;
+    }
+
     header, header#app-header {
       padding-top: 0;
     }
 
     main {
-      h1, h2, h3, p {
+      h1, h2, h3, label, p {
         margin: 3px $spacing-inside;
       }
 
-      section {
-        margin: ($spacing-inside * 0.75) $spacing-inside 3px;
-        padding: 0.6rem 0.9rem;
-        border: 1px solid $field-color;
-        border-radius: 6px;
-
-        label {
-          font-weight: 600;
-        }
+      label {
+        display: block;
+        margin: 6px 0;
+        font-size: 1.2em;
+        font-weight: 700;
       }
     }
   }

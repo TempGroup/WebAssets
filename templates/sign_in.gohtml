@@ -1,35 +1,41 @@
 <!doctype html>
-<html>
+<html class="force full-height">
   <head>
     {{ template "_common_head.gohtml" }}
     <title>Sign in</title>
   </head>
 
-  <body class="modal-container">
-    <div class="modal half-width">
-      <header id="app-header">
-        <div class="left side">
-          <div class="app-logo">
-            <img src="/static/cooked/app.svg" alt="Erdwolf" />
-          </div>
-
-          <span class="app-name">Erdwolf</span>
+  <body class="full-height modal-container flex justify-content-center align-center column">
+    <header id="app-header">
+      <div class="left side">
+        <div class="app-logo">
+          <img src="/static/cooked/app.svg" alt="Erdwolf" />
         </div>
-      </header>
 
+        <span class="app-name">Erdwolf</span>
+      </div>
+    </header>
+
+    <p class="system notification warning">
+      You have to sign in in order to access this restricted area.
+    </p>
+
+    <!--<div class="modal half-width">
       <main>
         <h1 class="modal-title">Sign in</h1>
         <p>You are required to sign in before accessing this area.</p>
+      </main>
+    </div>-->
 
-        <section>
-          <label class="section-title">Sign in with</label>
+    <div class="micro half-width modal">
+      <main>
+        <label class="section-title">Sign in with</label>
 
-          <div class="flex justify-content-between wrap">
+        <div class="flex justify-content-between wrap">
             {{ range $name, $info := .configuredAuthProviders }}
               <a class="button" href="/auth/sign-in/with/{{ $name }}">{{ $info.Name }}</a>
             {{ end }}
-          </div>
-        </section>
+        </div>
       </main>
     </div>
   </body>
