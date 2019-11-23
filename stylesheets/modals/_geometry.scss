@@ -1,7 +1,10 @@
+@use 'utilities/contrast';
 $background-color: #ccc !default;
+$border-color: desaturate(lighten($background-color, 12%), 5%) !default;
 $font-color: #222 !default;
-$spacing-inside: 2rem;
-$margin-inside: 1.8em;
+$spacing-inside: 2rem !default;
+$margin-inside: 1.8em !default;
+$field-color: contrast.adjustStandalone(desaturate($background-color, 30%), 20%) !default;
 
 .modal-container {
   height: 100%;
@@ -16,17 +19,33 @@ $margin-inside: 1.8em;
     max-width: 500px;
     width: 100%;
     border-radius: 12px;
+    border: 1px solid $border-color;
     background: $background-color;
     color: $font-color;
     overflow-y: auto;
+
+    &.half-width {
+      max-width: 375px;
+    }
 
     header, header#app-header {
       padding-top: 0;
     }
 
     main {
-      h1, p {
+      h1, h2, h3, p {
         margin: 3px $spacing-inside;
+      }
+
+      section {
+        margin: ($spacing-inside * 0.75) $spacing-inside 3px;
+        padding: 0.6rem 0.9rem;
+        border: 1px solid $field-color;
+        border-radius: 6px;
+
+        label {
+          font-weight: 600;
+        }
       }
     }
   }
