@@ -6,6 +6,7 @@
   */
 @use 'normalize.css/normalize.css';
 @use 'base/flex';
+@use 'base/size_classes';
 @use 'base/background' with (
   $background-color: colors.$backgroundColor,
   $font-color: contrast.adjust(colors.$backgroundColor, 80%)
@@ -53,7 +54,9 @@
   $item-spacing: 0.4em,
   $outer-margin: _header_geometry.$outer-margin - 0.4em,
   $item-font-color: darken(background.$font-color, 8%),
-  $current-item-font-color: background.$font-color
+  $current-item-font-color: background.$font-color,
+  $split-panel: 1,
+  $split-panel-color: contrast.adjust(background.$background-color, 10%)
 );
 
 /**
